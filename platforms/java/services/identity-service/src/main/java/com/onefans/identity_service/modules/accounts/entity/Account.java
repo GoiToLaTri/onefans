@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +28,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
+@Table(name = "accounts")
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -35,7 +37,7 @@ public class Account {
     @Column(nullable = false)
     String password;
 
-    @Column(updatable = false)
+    @Column(updatable = false, unique = true)
     String email;
 
     @Column(nullable = false)

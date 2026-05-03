@@ -30,6 +30,11 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!-- 
+			- Scope:
+				- provided: Thư viện này cần class này để compile, nhưng khi chạy (runtime), 
+				thằng Microservice nào dùng tôi thì thằng đó phải tự có sẵn thư viện này rồi.
+		 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -51,6 +56,26 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Validation -->
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+			<version>3.0.2</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
