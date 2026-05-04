@@ -70,6 +70,20 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<!-- Scope provided vì các service chạy Web/WebFlux đều đã có sẵn thư viện này -->
+			<scope>provided</scope> 
+		</dependency>
+
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-core</artifactId>
+			<!-- Nếu dùng trong common-lib cho Gateway, nên để scope provided -->
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- Validation -->
 		<dependency>
 			<groupId>jakarta.validation</groupId>

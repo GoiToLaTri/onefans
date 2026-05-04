@@ -20,7 +20,6 @@ public class ErrorResponse {
     LocalDateTime timestamp;
     int status;
     String code;
-    String title;
     String detail;
     String path;
 

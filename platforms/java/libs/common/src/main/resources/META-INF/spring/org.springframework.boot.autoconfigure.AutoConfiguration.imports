@@ -1,1 +1,2 @@
+com.onefans.common.exception.flux.GatewayExceptionHandler
 com.onefans.common.exception.GlobalExceptionHandler

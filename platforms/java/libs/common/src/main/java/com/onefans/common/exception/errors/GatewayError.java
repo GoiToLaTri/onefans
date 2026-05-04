@@ -8,18 +8,22 @@ import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor
-public enum UserError implements ErrorDefinition{
-    USER_NOT_FOUND(
-        "USR_001",
-        "User not found",
-        HttpStatus.NOT_FOUND
+public enum GatewayError implements ErrorDefinition{
+    INTERNAL_SERVER_ERROR(
+        "GW_001",
+        "An unexpected error occurred.",
+        HttpStatus.INTERNAL_SERVER_ERROR
     ),
-
-    USER_ALREADY_EXISTS(
-        "USR_002",
-        "User already exists",
-        HttpStatus.CONFLICT
+    GATEWAY_PROCESSING_ERROR(
+        "GW_002",
+        "Gateway processing failed.",
+        HttpStatus.BAD_GATEWAY
     ),
+    SERVICE_UNAVAILABLE(
+        "GW_003",
+        "Service is currently unavailable. Please try again later.",
+        HttpStatus.SERVICE_UNAVAILABLE
+    )
     ;
     String code;
     String message;
