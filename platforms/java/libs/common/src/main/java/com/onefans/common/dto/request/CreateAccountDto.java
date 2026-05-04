@@ -16,15 +16,15 @@ import lombok.experimental.FieldDefaults;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CreateAccountDto {
-    @NotBlank(message = "REQUIRED_NAME")
-    @Size(min = 1, message = "INVALID_NAME")
+    @NotBlank(message = "NAME_REQUIRED")
+    @Size(min = 1, message = "NAME_INVALID")
     String name;
 
-    @NotBlank(message = "REQUIRED_PASSWORD")
-    @Size(min = 4, message = "INVALID_PASSWORD")
+    @NotBlank(message = "PASSWORD_REQUIRED")
+    @Size(min = 4, message = "PASSWORD_INVALID")
     String password;
 
-    @NotBlank(message = "REQUIRED_EMAIL")
-    @Email(message = "INVALID_EMAIL")
+    @NotBlank(message = "EMAIL_REQUIRED")
+    @Email(message = "EMAIL_INVALID")
     String email;
 }
