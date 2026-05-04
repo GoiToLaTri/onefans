@@ -20,7 +20,7 @@ import lombok.experimental.FieldDefaults;
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
-    AccountService accountService;
+    IAccountService accountService;
 
     @PostMapping("/create")
     public ApiResponse<AccountResponseDto> create(@RequestBody @Valid CreateAccountDto entity) {        

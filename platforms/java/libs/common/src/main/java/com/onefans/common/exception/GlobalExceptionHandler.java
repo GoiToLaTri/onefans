@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.onefans.common.dto.response.ErrorResponse;
+import com.onefans.common.exception.errors.ErrorDefinition;
 import com.onefans.common.exception.errors.ServerError;
 
 import jakarta.servlet.http.HttpServletRequest;
