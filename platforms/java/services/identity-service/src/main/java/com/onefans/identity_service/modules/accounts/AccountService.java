@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.onefans.common.dto.request.CreateAccountDto;
 import com.onefans.common.dto.response.AccountResponseDto;
 import com.onefans.common.exception.HttpException;
-import com.onefans.common.exception.errors.UserError;
+import com.onefans.common.exception.errors.AccountError;
 import com.onefans.identity_service.modules.accounts.entity.Account;
 import com.onefans.identity_service.modules.accounts.mapper.AccountMapper;
 import com.onefans.identity_service.modules.accounts.repository.AccountRepository;
@@ -27,7 +27,7 @@ public class AccountService {
     @Transactional
     public AccountResponseDto create(CreateAccountDto createAccountDto) {
         boolean exists = accountRepository.existsByEmail(createAccountDto.getEmail());
-        if(exists) throw new HttpException(UserError.USER_ALREADY_EXISTS);
+        if(exists) throw new HttpException(AccountError.ACCOUNT_ALREADY_EXISTS);
         Account account = accountRepository.save(accountMapper.toAccount(createAccountDto));
         return accountMapper.toAccountResponse(account);
     }

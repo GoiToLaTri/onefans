@@ -25,8 +25,8 @@ public class AccountController {
     @PostMapping("/create")
     public ApiResponse<AccountResponseDto> create(@RequestBody @Valid CreateAccountDto entity) {        
         return ApiResponse.<AccountResponseDto>builder()
-                .code("Created")
-                .message(null)
+                .code("CREATED")
+                .message("Account is created")
                 .data(accountService.create(entity))
                 .build();
     }
